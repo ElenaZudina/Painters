@@ -15,10 +15,10 @@
     <body>
         <nav class="one">
             <ul class="topmenu">
-                <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
+                <li><a href="#">Styles<i class="fa fa-angle-down"></i></a>
                     <ul class="submenu">
                         <?php
-                        Controller::AllCategory();
+                        Controller::AllStyle();
                         ?>
                     </ul>
                 </li>

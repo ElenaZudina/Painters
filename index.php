@@ -3,7 +3,7 @@
 // Файл для запуска проекта
 session_start();
 include_once 'inc/Database.php';
-require 'model/Styles.php';
+require 'model/Style.php';
 require  'model/Paintings.php';
 require 'model/Comments.php';
 require 'model/Register.php';

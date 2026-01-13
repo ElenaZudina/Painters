@@ -9,14 +9,14 @@ if($path == '' OR $path == 'index' OR $path == 'index.php') {
 }
 
 elseif($path == 'all') {
-    $response = Controller::All();
+    $response = Controller::AllPaintings();
 }
-elseif($path == 'category' and isset($_GET['id'])) {
+elseif($path == 'style' and isset($_GET['id'])) {
     $response = Controller::PaintingsByStyleID($_GET['id']);
 }
-elseif($path == 'news' and isset($_GET['id'])) {
-    $response = Controller::PaintingsById($_GET['id']);
-}
+elseif($path == 'paintings' and isset($_GET['id'])) {
+    $response = Controller::PaintingsByID($_GET['id']);
+}/*
 elseif($path == 'insertcomment' and isset($_GET['comment'],$_GET['id'])) {
     $response = Controller::InsertComment($_GET['comment'],$_GET['id']);
 }
@@ -28,7 +28,7 @@ elseif ($path == 'registerForm' ) {
 elseif ($path == 'registerAnswer') {
     //register user
     $response = Controller::registerUser();
-}
+}*/
 
 //error page
 else{
