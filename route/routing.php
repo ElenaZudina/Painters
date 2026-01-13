@@ -15,7 +15,7 @@ elseif($path == 'style' and isset($_GET['id'])) {
     $response = Controller::PaintingsByStyleID($_GET['id']);
 }
 elseif($path == 'paintings' and isset($_GET['id'])) {
-    $response = Controller::PaintingsByID($_GET['id']);
+    $response = Controller::PaintingByID($_GET['id']);
 }/*
 elseif($path == 'insertcomment' and isset($_GET['comment'],$_GET['id'])) {
     $response = Controller::InsertComment($_GET['comment'],$_GET['id']);
