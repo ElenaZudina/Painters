@@ -1,11 +1,11 @@
 <?php
 ob_start();
 ?>
-<h1>All news </h1>
+<h1>Koik paintings </h1>
 <br>
 
 <?php
-ViewNews::AllNews($arr);
+ViewPaintings::AllPaintings($arr);
 $content = ob_get_clean();
 include_once 'view/layout.php';
 

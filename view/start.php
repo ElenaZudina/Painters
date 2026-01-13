@@ -1,10 +1,10 @@
 <?php
 ob_start();
 ?>
-<h1>TOP 3 NEWS </h1>
+<h1>TOP 10 PAINTINGS </h1>
 <br>
 <?php
-ViewNews::NewsByCategory($arr);
+ViewPaintings::PaintingsByStyle($arr);
 
 $content = ob_get_clean();
 
