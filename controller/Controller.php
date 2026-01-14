@@ -52,26 +52,26 @@ class Controller {
         include_once 'view/error404.php';
     }
 
-    /*public static function InsertComment($c, $id) {
+    public static function InsertComment($c, $id) {
         Comments::InsertComment($c, $id);
         //self::NewsByID($id);
-        header('Location:news?id='.$id.'#ctable');
+        header('Location:paintings?id='.$id.'#ctable');
     }
     // Список комментариев
-    public static function Comments($newsid) {
-        $arr = Comments::getCommentByNewsID($newsid);
-        ViewComments::CommentsByNews($arr);
+    public static function Comments($paintingid) {
+        $arr = Comments::getCommentByPaintingID($paintingid);
+        ViewComments::CommentsByPainting($arr);
     }
-    // количество комментариев к ноdости
-    public static function CommentsCount($newsid) {
-        $arr = Comments::getCommentsCountByNewsID($newsid);
+    // количество комментариев к картине
+    public static function CommentsCount($paintingid) {
+        $arr = Comments::getCommentsCountByPaintingID($paintingid);
         ViewComments::CommentsCount($arr);
     }
     // Ссылка - переход к списку комментариев
-    public static function CommentsCountWithAncor($newsid) {
-        $arr = Comments::getCommentsCountByNewsID($newsid);
+    public static function CommentsCountWithAncor($paintingid) {
+        $arr = Comments::getCommentsCountByPaintingID($paintingid);
         ViewComments::CommentsCountWithAncor($arr);
-    }
+    }/*
     // Регистрация
     public static function registerForm() {
         include_once('view/formRegister.php');

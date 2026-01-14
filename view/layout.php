@@ -23,7 +23,7 @@
                     </ul>
                 </li>
                 <li><a href="testError">Info</a></li>
-                <li><a href="./">Stardileht</a></li>
+                <li><a href="./">Homepage</a></li>
                 <li><a href="registerForm">Register</a></li>
             </ul>
         </nav>
