@@ -3,11 +3,11 @@ session_start();
 require_once '../inc/database.php';
 
 include_once("modelAdmin/modelAdmin.php");
-include_once("modelAdmin/modelAdminNews.php");
-include_once("modelAdmin/modelAdminCategory.php");
+//include_once("modelAdmin/modelAdminPaintings.php");
+//include_once("modelAdmin/modelAdminStyle.php");
 
 include_once("controllerAdmin/controllerAdmin.php");
-include_once("controllerAdmin/controllerAdminNews.php");
+//include_once("controllerAdmin/controllerAdminNews.php");
 
 include('routeAdmin/routingAdmin.php'); //!!!!
 

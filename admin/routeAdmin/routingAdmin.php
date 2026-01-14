@@ -15,10 +15,10 @@ elseif ($path == 'login') {
 elseif ($path == 'logout') {
     // Выход
     $response = controllerAdmin::logoutAction();
-}
+}/*
 //-------- listNews
-elseif($path == 'newsAdmin') {
-    $response = controllerAdminNews::NewsList();
+elseif($path == 'paintingsAdmin') {
+    $response = controllerAdminPaintings::PaintingsList();
 }
 //-------- add news
 elseif ($path == 'newsAdd') {
@@ -40,7 +40,7 @@ elseif ($path=='newsDel' && isset($_GET['id'])) {
 }
 elseif ($path == 'newsDelResult' && isset($_GET['id'])) {
     $response = controllerAdminNews::newsDeleteResult($_GET['id']);
-}
+}*/
 else 
 {
     // Страница не существует

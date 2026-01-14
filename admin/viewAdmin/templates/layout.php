@@ -22,8 +22,8 @@
 <!-- -->
         <?php
         echo '<ul class="nav nav-pills pull-right">
-        <li role="button">'.$_SESSION["name"].
-        '<a href="logout" style="display: inline;">Logout <i class="fa fa-sign-out"></i></a></li></ul>';
+        <li role="button"><p>Hello, '.$_SESSION["name"].'</p>
+        <a href="logout" style="display: inline;">Logout <i class="fa fa-sign-out"></i></a></li></ul>';
 
         if(isset($_SESSION["status"]) && $_SESSION["status"]=="admin") {
 
