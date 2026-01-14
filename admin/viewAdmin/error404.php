@@ -1,8 +1,8 @@
 <?php ob_start() ?>
-<h2>404 Ошибка</h2>
+<h2>404 Error</h2>
 <article>
-    <h3>404ошибка - что это ткаое?</h3>
-    <p>По запрашиваемому URL страница не найдена</p>
+    <h3>404 Error - What is it?</h3>
+    <p>The page you requested was not found/p>
 </article>
 <?php $content = ob_get_clean(); ?>
 
