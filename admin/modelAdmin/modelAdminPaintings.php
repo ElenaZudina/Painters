@@ -1,13 +1,14 @@
 <?php
-class modelAdminNews {
-    public static function getNewsList() {
-        $query = "SELECT news.*, category.name, users.username from news,
-        category, users WHERE news.category_id=category.id AND
-        news.user_id=users.id ORDER BY `news`.`id` DESC";
+class modelAdminPaintings {
+    public static function getPaintingsList() {
+        $query = "SELECT paintings.*, styles.name AS style_name, artists.name AS artist_name from paintings,
+        styles, artists WHERE paintings.style_id=styles.id AND
+        paintings.artist_id=artists.id ORDER BY `paintings`.`id` DESC";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
+    /*
     //----------------------------- Add
     public static function getNewsAdd() {
         $test=false;
@@ -50,10 +51,10 @@ class modelAdminNews {
                 $image=$_FILES['picture']['name'];
                 if($image!="") {
                     $image = addslashes(file_get_contents($_FILES['picture']['tmp_name']));
-                    /* //---------------------images type text
-                    $uploaddir = '../images/';
-                    $uploadfiles = $uploaddir . basename($_FILES['picture']['name']);
-                    copy($_FILES['picture']['tmp_name'], $uploadfile); */
+                    //---------------------images type text
+                    //$uploaddir = '../images/';
+                    //$uploadfiles = $uploaddir . basename($_FILES['picture']['name']);
+                    //copy($_FILES['picture']['tmp_name'], $uploadfile);
                 }
                 //----------
                 if($image==""){
@@ -85,4 +86,6 @@ class modelAdminNews {
             }
             return $test;
         }
-    }
+*/
+    
+        }

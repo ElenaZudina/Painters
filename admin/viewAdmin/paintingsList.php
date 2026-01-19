@@ -2,17 +2,17 @@
 ob_start();
 ?>
 
-<h2>News List</h2>
+<h2>Paintings List</h2>
 
 <div class="container" style="min-height:400px;">
     <div style="margin:20px;">
-        <a class="btn btn-primary" href="newsAdd" role="button">Добавить новость</a>
+        <a class="btn btn-primary" href="paintingAdd" role="button">Add painting</a>
     </div>
     <div class="col-md-11">
         <table class='table table-bordered table-responsive'>
             <tr>
                 <th width="10%">ID</th>
-                <th width="70%">Header News</th>
+                <th width="70%">Header Painting</th>
                 <th width="20%"></th>
             </tr>
             <?php
@@ -20,13 +20,13 @@ ob_start();
                 echo '<tr>';
                 echo '<td>'.$row['id'].'</td> ';
                 echo '<td><b>Title:</b> '.$row['title'].'<br>';
-                echo '<b>Категория: </b><i>'.$row['name'].'</i>';
-                echo '<br><b>Author: </b><i>'.$row['username'].'</i>';
+                echo '<b>Стиль: </b><i>'.$row['style_name'].'</i>';
+                echo '<br><b>Художник: </b><i>'.$row['artist_name'].'</i>';
 
                 echo '</td>';
                 echo'<td>
-                <a href="newsEdit?id='.$row['id'].'">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                <a href="newsDel?id='.$row['id'].'">Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                <a href="paintingEdit?id='.$row['id'].'">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                <a href="paintingDel?id='.$row['id'].'">Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
                 </td>';
                 echo '</tr>';
             }

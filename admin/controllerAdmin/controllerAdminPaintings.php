@@ -1,10 +1,10 @@
 <?php
-class controllerAdminNews {
-    //list News
-    public static function NewsList() {
-        $arr=modelAdminNews::getNewsList();
-        include_once 'viewAdmin/newsList.php';
-    }
+class controllerAdminPaintings {
+    //list Paintings
+    public static function PaintingsList() {
+        $arr=modelAdminPaintings::getPaintingsList();
+        include_once 'viewAdmin/paintingsList.php';
+    }/*
     //--------add
     public static function newsAddForm() {
         $arr = modelAdminCategory::getCategoryList();
@@ -34,5 +34,5 @@ class controllerAdminNews {
     public static function newsDeleteResult($id) {
         $test = modelAdminNews::getNewsDelete($id);
         include_once('viewAdmin/newsDeleteForm.php');
-    }
+    }*/
 }
