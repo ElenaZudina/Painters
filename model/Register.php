@@ -8,15 +8,15 @@ class Register{
             $name = $_POST['name'];
             $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
             if(!$email) {
-                $errorString.="Неправильный email<br />";
+                $errorString.="Invalid email address<br />";
             }
             $password = $_POST['password'];
             $confirm = $_POST['confirm'];
             if (!$password || !$confirm || mb_strlen($password) < 6) {
-                $errorString.="Пароль должен быть больше 6 символов <br />";
+                $errorString.="Password must be at least 6 characters long<br />";
             }
             if($password!=$confirm) {
-                $errorString.="Пароли не совпадают <br />";
+                $errorString.="Passwords do not match<br />";
             }
             if ( mb_strlen($errorString) ==0 ) {
                 $passwordHash = password_hash($_POST['password'], PASSWORD_DEFAULT);

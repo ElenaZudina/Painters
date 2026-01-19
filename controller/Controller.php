@@ -71,7 +71,7 @@ class Controller {
     public static function CommentsCountWithAncor($paintingid) {
         $arr = Comments::getCommentsCountByPaintingID($paintingid);
         ViewComments::CommentsCountWithAncor($arr);
-    }/*
+    }
     // Регистрация
     public static function registerForm() {
         include_once('view/formRegister.php');
@@ -79,5 +79,5 @@ class Controller {
     public static function registerUser() {
         $result = Register::registerUser();
         include_once('view/answerRegister.php');
-    }*/
+    }
 } //end class
