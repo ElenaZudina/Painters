@@ -15,17 +15,17 @@ elseif ($path == 'login') {
 elseif ($path == 'logout') {
     // Выход
     $response = controllerAdmin::logoutAction();
-}/*
-//-------- listNews
+}
+//-------- listPaintings
 elseif($path == 'paintingsAdmin') {
     $response = controllerAdminPaintings::PaintingsList();
+}/*
+//-------- add painting
+elseif ($path == 'paintingAdd') {
+    $response = controllerAdminPaintings::paintingAddForm();
 }
-//-------- add news
-elseif ($path == 'newsAdd') {
-    $response = controllerAdminNews::newsAddForm();
-}
-elseif ($path == 'newsAddResult') {
-    $response = controllerAdminNews::newsAddResult();
+elseif ($path == 'paintingAddResult') {
+    $response = controllerAdminPaintings::paintingAddResult();
 }
 //========= edit news
 elseif ($path =='newsEdit' && isset($_GET['id'])) {
