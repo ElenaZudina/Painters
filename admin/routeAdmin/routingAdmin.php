@@ -19,14 +19,14 @@ elseif ($path == 'logout') {
 //-------- listPaintings
 elseif($path == 'paintingsAdmin') {
     $response = controllerAdminPaintings::PaintingsList();
-}/*
+}
 //-------- add painting
 elseif ($path == 'paintingAdd') {
     $response = controllerAdminPaintings::paintingAddForm();
 }
 elseif ($path == 'paintingAddResult') {
     $response = controllerAdminPaintings::paintingAddResult();
-}
+}/*
 //========= edit news
 elseif ($path =='newsEdit' && isset($_GET['id'])) {
     $response = controllerAdminNews::newsEditForm($_GET['id']);

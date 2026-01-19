@@ -4,17 +4,17 @@ class controllerAdminPaintings {
     public static function PaintingsList() {
         $arr=modelAdminPaintings::getPaintingsList();
         include_once 'viewAdmin/paintingsList.php';
-    }/*
+    }
     //--------add
-    public static function newsAddForm() {
-        $arr = modelAdminCategory::getCategoryList();
-        include_once('viewAdmin/newsAddForm.php');
+    public static function paintingAddForm() {
+        $arr = modelAdminStyle::getStyleList();
+        include_once('viewAdmin/paintingAddForm.php');
     }
 
-    public static function newsAddResult() {
-        $test = modelAdminNews::getNewsAdd();
-        include_once('viewAdmin/newsAddForm.php');
-    }
+    public static function paintingAddResult() {
+        $test = modelAdminPaintings::getPaintingAdd();
+        include_once('viewAdmin/paintingAddForm.php');
+    }/*
     //------------edit
     public static function newsEditForm($id) {
         $arr = modelAdminCategory::getCategorylist();
