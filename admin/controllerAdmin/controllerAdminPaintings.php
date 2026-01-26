@@ -15,17 +15,18 @@ class controllerAdminPaintings {
     public static function paintingAddResult() {
         $test = modelAdminPaintings::getPaintingAdd();
         include_once('viewAdmin/paintingAddForm.php');
-    }/*
+    }
     //------------edit
-    public static function newsEditForm($id) {
-        $arr = modelAdminCategory::getCategorylist();
-        $detail = modelAdminNews::getNewsDetail($id);
-        include_once('viewAdmin/newsEditform.php');
+    public static function paintingEditForm($id) {
+        $styles = modelAdminStyle::getStylelist();
+        $artists = modelAdminPaintings::getArtistList();
+        $detail = modelAdminPaintings::getPaintingDetail($id);
+        include_once('viewAdmin/paintingEditform.php');
     }
-    public static function newsEditResult($id) {
-        $test = modelAdminNews::getNewsEdit($id);
-        include_once('viewAdmin/newsEditForm.php');
-    }
+    public static function paintingEditResult($id) {
+        $test = modelAdminPaintings::getPaintingEdit($id);
+        include_once('viewAdmin/paintingEditForm.php');
+    }/*
     //-------delete
     public static function newsDeleteForm($id) {
         $arr = modelAdminCategory::getCategoryList();

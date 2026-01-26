@@ -26,14 +26,14 @@ elseif ($path == 'paintingAdd') {
 }
 elseif ($path == 'paintingAddResult') {
     $response = controllerAdminPaintings::paintingAddResult();
+}
+//========= edit painting
+elseif ($path =='paintingEdit' && isset($_GET['id'])) {
+    $response = controllerAdminPaintings::paintingEditForm($_GET['id']);
+}
+elseif ($path == 'paintingEditResult' && isset($_GET['id'])) {
+    $response = controllerAdminPaintings::paintingEditResult($_GET['id']);
 }/*
-//========= edit news
-elseif ($path =='newsEdit' && isset($_GET['id'])) {
-    $response = controllerAdminNews::newsEditForm($_GET['id']);
-}
-elseif ($path == 'newsEditResult' && isset($_GET['id'])) {
-    $response = controllerAdminNews::newsEditResult($_GET['id']);
-}
 //==========delete news
 elseif ($path=='newsDel' && isset($_GET['id'])) {
     $response=controllerAdminNews::newsDeleteForm($_GET['id']);

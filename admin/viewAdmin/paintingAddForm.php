@@ -11,7 +11,7 @@ ob_start();
             {
                 ?>
                 <div class="alert alert-ifo">
-                    <strong>Record added successfully.</strong><a href="paintingsAdmin">Go to news list</a>
+                    <strong>Record added successfully. </strong><a href="paintingsAdmin">Go to painting list</a>
                 </div>
                 <?php
             }
@@ -19,7 +19,7 @@ ob_start();
             {
                 ?>
                 <div class="alert alert-warning">
-                    <strong>Error adding record!</strong><a href="paitingsAdmin">Go to news list</a>
+                    <strong>Error adding record! </strong><a href="paitingsAdmin">Go to painting list</a>
                 </div>
                 <?php
             }
@@ -29,7 +29,7 @@ ob_start();
             <form method='POST' action="paintingAddResult" enctype="multipart/form-data">
                 <table class='table table-bordered'>
                     <tr>
-                        <td>Paining title</td>
+                        <td>Paiting title</td>
                         <td><input type='text' name='title' class='form-control' required></td>
                     </tr>
                     <tr>

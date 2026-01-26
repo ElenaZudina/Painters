@@ -39,23 +39,25 @@ class modelAdminPaintings {
         }
         return $test;
     }
-/*
-    //--------------news detail id
-    public static function getNewsDetail($id) {
-        $query = "SELECT news.*, category.name, users.username from news, category, users
-        WHERE news.category_id=category.id AND news.user_id=users.id and news.id=".$id;
+
+    //--------------painting detail id
+    public static function getPaintingDetail($id) {
+        $query = "SELECT paintings.*, styles.name, artists.name, users.username from paintings, styles, artists, users
+        WHERE paintings.style_id=styles.id AND paintings.artist_id=artists.id AND paintings.user_id=users.id and paintings.id=".$id;
         $db = new Database();
         $arr = $db->getOne($query);
         return $arr;
     }
     //----------------news edit
-    public static function getNewsEdit($id) {
+    public static function getPaintingEdit($id) {
         $test = false;
         if(isset($_POST['save'])) {
-            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) ) {
+            if(isset($_POST['title']) && isset($_POST['description']) && isset($_POST['year']) && isset($_POST['idArtist']) && isset($_POST['idStyle'])) {
                 $title = $_POST['title'];
-                $text = $_POST['text'];
-                $idCategory = $_POST['idCategory'];
+                $description = $_POST['description'];
+                $year = $_POST['year'];
+                $idArtist = $_POST['idArtist'];
+                $idStyle = $_POST['idStyle'];
                 //---------------image type blob
                 $image=$_FILES['picture']['name'];
                 if($image!="") {
@@ -67,11 +69,11 @@ class modelAdminPaintings {
                 }
                 //----------
                 if($image==""){
-                    $sql="UPDATE `news` SET `title` = '$title', `text` = '$text', `category_id` = '$idCategory' 
-                    WHERE `news`.`id` = ".$id;
+                    $sql="UPDATE `paintings` SET `title` = '$title', `description` = '$description', `artist_id` = '$idArtist',  `year_created` = '$year', `style_id` = '$idStyle' 
+                    WHERE `paintings`.`id` = ".$id;
                     } else {
-                        $sql="UPDATE `news` SET `title` = '$title', `text` = '$text', `picture` = '$image',`category_id` = '$idCategory' 
-                    WHERE `news`.`id` = ".$id;
+                        $sql="UPDATE `paintings` SET `title` = '$title', `description` = '$description', `year_created` = '$year', `artist_id` = '$idArtist', `picture` = '$image',`style_id` = '$idStyle' 
+                    WHERE `paintings`.`id` = ".$id;
                     }
                     $db = new Database();
                     $item = $db->executeRun($sql);
@@ -81,7 +83,7 @@ class modelAdminPaintings {
                 }
             }
             return $test;
-        }
+        }/*
         //----------------news delete
         public static function getNewsDelete($id) {
             $test=false;
