@@ -7,7 +7,8 @@ class controllerAdminPaintings {
     }
     //--------add
     public static function paintingAddForm() {
-        $arr = modelAdminStyle::getStyleList();
+        $styles = modelAdminStyle::getStyleList();
+        $artists = modelAdminPaintings::getArtistList();
         include_once('viewAdmin/paintingAddForm.php');
     }
 

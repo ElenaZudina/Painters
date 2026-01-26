@@ -8,19 +8,28 @@ class modelAdminPaintings {
         $arr = $db->getAll($query);
         return $arr;
     }
-    /*
+    
+    public static function getArtistList() {
+        $query = "SELECT id, name FROM artists ORDER BY name ASC";
+        $db = new Database();
+        $arr = $db->getAll($query);
+        return $arr;
+    }
+
     //----------------------------- Add
-    public static function getNewsAdd() {
+    public static function getPaintingAdd() {
         $test=false;
         if(isset ($_POST['save'])) {
-            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) ) {
+            if(isset($_POST['title']) && isset($_POST['description']) && isset($_POST['year']) && isset($_POST['idArtist']) && isset($_POST['idStyle']) ) {
                 $title=$_POST['title'];
-                $text=$_POST['text'];
-                $idCategory=$_POST['idCategory'];
+                $description=$_POST['description'];
+                $year=$_POST['year'];
+                $idArtist=$_POST['idArtist'];
+                $idStyle=$_POST['idStyle'];
                 //---------images type blob
                 $image=addslashes (file_get_contents($_FILES['picture']['tmp_name']));
                 //----------------------------
-                $sql="INSERT INTO `news` (`id`, `title`, `text`, `picture`, `category_id`, `user_id`) VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
+                $sql="INSERT INTO `paintings` (`id`, `title`, `description`, `year_created`, `picture`, `artist_id`, `style_id`, `date`, `user_id`) VALUES (NULL, '$title', '$description', '$year', '$image', '$idArtist', '$idStyle', CURRENT_TIMESTAMP, '1')";
                 $db = new Database();
                 $item = $db->executeRun($sql);
                 if($item==true) {
@@ -30,7 +39,7 @@ class modelAdminPaintings {
         }
         return $test;
     }
-
+/*
     //--------------news detail id
     public static function getNewsDetail($id) {
         $query = "SELECT news.*, category.name, users.username from news, category, users

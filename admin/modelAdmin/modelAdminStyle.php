@@ -1,8 +1,8 @@
 <?php
-class modelAdminCategory {
+class modelAdminStyle {
     //---------List
-    public static function getCategoryList() {
-        $sql = "SELECT * FROM category ORDER BY category.name ASC";
+    public static function getStyleList() {
+        $sql = "SELECT * FROM styles ORDER BY styles.name ASC";
         $db = new Database();
         //$rows = массив данных
         $rows = $db->getAll($sql);
