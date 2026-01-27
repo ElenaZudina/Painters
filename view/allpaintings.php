@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1>All paintings </h1>
+<h1><?php echo t('all_paintings_title'); ?> </h1>
 <br>
 
 <?php

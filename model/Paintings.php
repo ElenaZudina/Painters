@@ -1,21 +1,30 @@
 <?php
 class Paintings{
     public static function getLast10Paintings() {
-        $query = "SELECT * FROM paintings ORDER BY id DESC LIMIT 10";
+        global $current_lang;
+        $title_field = 'title_' . $current_lang;
+        $description_field = 'description_' . $current_lang;
+        $query = "SELECT id, picture, style_id, artist_id, user_id, $title_field AS title, $description_field AS description FROM paintings ORDER BY id DESC LIMIT 10";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getAllPaintings() {
-        $query = "SELECT * FROM paintings ORDER BY id DESC";
+        global $current_lang;
+        $title_field = 'title_' . $current_lang;
+        $description_field = 'description_' . $current_lang;
+        $query = "SELECT id, picture, style_id, artist_id, user_id, $title_field AS title, $description_field AS description FROM paintings ORDER BY id DESC";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
     }
 
     public static function getPaintingsByStyleID($id) {
-        $query = "SELECT * FROM paintings where style_id=".(string)$id." ORDER BY id DESC";
+        global $current_lang;
+        $title_field = 'title_' . $current_lang;
+        $description_field = 'description_' . $current_lang;
+        $query = "SELECT id, picture, style_id, artist_id, user_id, $title_field AS title, $description_field AS description FROM paintings where style_id=".(string)$id." ORDER BY id DESC";
         $db = new Database();
         $arr = $db->getAll($query);
         return $arr;
@@ -29,8 +38,21 @@ class Paintings{
     }*/
 
      public static function getPaintingByID($id) {
-        $query = "SELECT paintings.*, styles.name AS style_name, artists.name as artist_name, users.username from paintings, styles, artists, users
-        WHERE paintings.style_id=styles.id AND paintings.artist_id=artists.id AND paintings.user_id=users.id and paintings.id=".$id;
+        global $current_lang;
+        $title_field = 'title_' . $current_lang;
+        $description_field = 'description_' . $current_lang;
+        $query = "SELECT
+                    paintings.*,
+                    styles.name AS style_name,
+                    artists.name as artist_name,
+                    users.username,
+                    paintings.$title_field AS title,
+                    paintings.$description_field AS description
+                  FROM paintings, styles, artists, users
+                  WHERE paintings.style_id=styles.id
+                    AND paintings.artist_id=artists.id
+                    AND paintings.user_id=users.id
+                    AND paintings.id=".$id;
         $db = new Database();
         $arr = $db->getOne($query);
         return $arr;

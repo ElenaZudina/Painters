@@ -9,7 +9,7 @@ class ViewPaintings{
                 echo '</div>'; // Закрываем обертку
                 echo '<h3>' . htmlspecialchars($value['title']) . '</h3>';
                 Controller::CommentsCount($value['id']);
-                echo '<a href="paintings?id=' . $value['id'] . '" class="btn-view-details">View details</a>';
+echo '<a href="paintings?id=' . $value['id'] . '" class="btn-view-details">' . t('view_details_button') . '</a>';
             echo '</div>'; // Закрываем карточку
         }
         echo '</div>'; // Закрываем общий контейнер
@@ -24,7 +24,7 @@ public static function AllPaintings($arr) {
             echo '</div>'; // Закрываем обертку
             echo '<h3>' . htmlspecialchars($value['title']) . '</h3>';
             Controller::CommentsCount($value['id']);
-            echo '<a href="paintings?id=' . $value['id'] . '" class="btn-view-details">View details</a>';
+            echo '<a href="paintings?id=' . $value['id'] . '" class="btn-view-details">' . t('view_details_button') . '</a>';
         echo '</div>'; // Закрываем карточку
     }
     echo '</div>'; // Закрываем общий контейнер

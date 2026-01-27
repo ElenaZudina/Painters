@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1>TOP 10 PAINTINGS </h1>
+<h1><?php echo t('top_10_paintings_title'); ?> </h1>
 <br>
 <?php
 ViewPaintings::PaintingsByStyle($arr);

@@ -284,3 +284,30 @@ section{
   box-shadow: none; /* Тень будет у обертки */
   margin-bottom: 0; /* Отступ будет у обертки */
 }
+
+/* В style.css */
+.language-switcher {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+.language-switcher a {
+    display: inline-block;
+    padding: 5px 8px;
+    text-decoration: none;
+    color: #555;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+.language-switcher a:hover {
+    color: #a0522d;
+    border-color: #a0522d;
+}
+.language-switcher a.active-lang {
+    font-weight: bold;
+    color: #a0522d;
+    border-color: #a0522d;
+    background-color: rgba(160, 82, 45, 0.1);
+}

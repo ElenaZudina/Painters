@@ -3,18 +3,17 @@ class ViewComments {
     public static function CommentsForm() {
         echo '<form action="insertcomment">
         <input type="hidden" name="id" value="'.$_GET['id'].'">
-            Your comment: <input type="text" name="comment">
-        <input type="submit" value="Send"> </form>';
-    }
-    public static function CommentsByPainting($arr) {
-        if($arr!=null) {
-            echo '<table id="ctable"><th>Comment</th><th>Date</th>';
-            foreach($arr as $value) {
-                echo '<tr><td>'.$value['text']."</td><td>".$value['date']."</td></tr>";
-            }
-            echo '</table>';
+            ' . t('comment_form_title') . ' <input type="text" name="comment">
+        <input type="submit" value="' . t('send_comment_button') . '"> </form>';
+    }public static function CommentsByPainting($arr) {
+    if($arr!=null) {
+        echo '<table id="ctable"><th>' . t('comment_table_header') . '</th><th>' . t('date_table_header') . '</th>';
+        foreach($arr as $value) {
+            echo '<tr><td>'.$value['text']."</td><td>".$value['date']."</td></tr>";
         }
+        echo '</table>';
     }
+}
 
     public static function CommentsCountWithAncor($value) {
         if ($value['count']>0)

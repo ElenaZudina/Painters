@@ -15,18 +15,23 @@
     <body>
         <nav class="one">
             <ul class="topmenu">
-                <li><a href="#">Styles<i class="fa fa-angle-down"></i></a>
+                <li><a href="#"><?php echo t('styles_menu'); ?><i class="fa fa-angle-down"></i></a>
                     <ul class="submenu">
                         <?php
                         Controller::AllStyle();
                         ?>
                     </ul>
                 </li>
-                <li><a href="testError">Info</a></li>
-                <li><a href="./">Homepage</a></li>
-                <li><a href="registerForm">Register</a></li>
+                <li><a href="testError"><?php echo t('info_menu'); ?></a></li>
+                <li><a href="./"><?php echo t('homepage_menu'); ?></a></li>
+                <li><a href="registerForm"><?php echo t('register_menu'); ?></a></li>
             </ul>
         </nav>
+        <?php global $current_lang; ?>
+        <div class="language-switcher">
+            <a href="?lang=en" class="<?php echo ($current_lang == 'en') ? 'active-lang' : ''; ?>">EN</a> |
+            <a href="?lang=et" class="<?php echo ($current_lang == 'et') ? 'active-lang' : ''; ?>">ET</a>
+        </div>
         <section>
             <div class = 'divBox'>
                 <?php
