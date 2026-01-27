@@ -33,14 +33,14 @@ elseif ($path =='paintingEdit' && isset($_GET['id'])) {
 }
 elseif ($path == 'paintingEditResult' && isset($_GET['id'])) {
     $response = controllerAdminPaintings::paintingEditResult($_GET['id']);
-}/*
-//==========delete news
-elseif ($path=='newsDel' && isset($_GET['id'])) {
-    $response=controllerAdminNews::newsDeleteForm($_GET['id']);
 }
-elseif ($path == 'newsDelResult' && isset($_GET['id'])) {
-    $response = controllerAdminNews::newsDeleteResult($_GET['id']);
-}*/
+//==========delete painting
+elseif ($path=='paintingDel' && isset($_GET['id'])) {
+    $response=controllerAdminPaintings::paintingDeleteForm($_GET['id']);
+}
+elseif ($path == 'paintingDelResult' && isset($_GET['id'])) {
+    $response = controllerAdminPaintings::paintingDeleteResult($_GET['id']);
+}
 else 
 {
     // Страница не существует

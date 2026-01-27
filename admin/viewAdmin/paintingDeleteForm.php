@@ -4,14 +4,14 @@ ob_start();
 
 <div class="container" style="min-height:400px;">
     <div class="col-md-11">
-        <h2>News Delete</h2>
+        <h2>Paintings Delete</h2>
         <?php
         if(isset($test)) {
             if($test==true)
             {
                 ?>
                 <div class="alert alert-info">
-                    <strong>Запись удалена. </strong><a href="newsAdmin"> Список новостей</a>
+                    <strong>The entry has been deleted. </strong><a href="paintingsAdmin"> Go to painting list</a>
                 </div>
                 <?php
             }
@@ -19,31 +19,49 @@ ob_start();
             {
                 ?>
                 <div class="alert alert-warning">
-                    <strong>Ошибка удаления записи! </strong><a href="newsAdmin">Список новостей</a>
+                    <strong>Error deleting entry! </strong><a href="paintingAdmin">Go to painting list</a>
                 </div>
                 <?php
             }
         }
         else {
             ?>
-            <form method='POST' action="newsDelResult?id=<?php echo $id; ?>" enctype="multipart/form-data">
+            <form method='POST' action="paintingDelResult?id=<?php echo $id; ?>" enctype="multipart/form-data">
                 <table class='table table-bordered'>
                     <tr>
-                        <td>News title</td>
+                        <td>Painting title</td>
                         <td><input type='text' name='title' class='form-control' required value=<?php echo $detail['title']; ?> readonly></td>
                     </tr>
                     <tr>
-                        <td>News text</td>
-                        <td><textarea rows="5" name="text" class='form-control' required readonly><?php echo $detail['text']; ?></textarea></td>
+                        <td>Painting description</td>
+                        <td><textarea rows="5" name="description" class='form-control' required readonly><?php echo $detail['description']; ?></textarea></td>
+                    </tr>
+                     <tr>
+                        <td>Year</td>
+                        <td><textarea rows="5" name="year" class="form-control" required></textarea></td>
                     </tr>
                     <tr>
-                        <td>Category</td>
+                        <td>Style</td>
                         <td>
-                            <select name="idCategory" class="form-control" disabled>
+                            <select name="idStyle" class="form-control" disabled>
                                 <?php
-                                foreach($arr as $row) {
+                                foreach($styles as $row) {
                                     echo '<option value="'.$row['id'].'"';
-                                    if($row['id']==$detail['category_id']) echo 'selected';
+                                    if($row['id']==$detail['style_id']) echo 'selected';
+                                    echo '>'.$row['name'].'</option>';
+                                }
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Artist</td>
+                        <td>
+                            <select name="idArtist" class="form-control" disabled>
+                                <?php
+                                foreach($artists as $row) {
+                                    echo '<option value="'.$row['id'].'"';
+                                    if($row['id']==$detail['artist_id']) echo 'selected';
                                     echo '>'.$row['name'].'</option>';
                                 }
                                 ?>
@@ -68,10 +86,10 @@ ob_start();
                       <tr>
                         <td colspan="2">
                             <button type="submit" class="btn btn-primary" name="save">
-                                <span class="glyphicon glyphicon-plus"></span> Удалить
+                                <span class="glyphicon glyphicon-plus"></span> Delete
                             </button>
-                            <a href="newsAdmin" class="btn btn-large btn-success">
-                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Назад к списку
+                            <a href="paintingsAdmin" class="btn btn-large btn-success">
+                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Back to painting list
                             </a>
                         </td>
                       </tr>

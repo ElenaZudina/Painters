@@ -26,15 +26,16 @@ class controllerAdminPaintings {
     public static function paintingEditResult($id) {
         $test = modelAdminPaintings::getPaintingEdit($id);
         include_once('viewAdmin/paintingEditForm.php');
-    }/*
-    //-------delete
-    public static function newsDeleteForm($id) {
-        $arr = modelAdminCategory::getCategoryList();
-        $detail = modelAdminNews::getNewsDetail($id);
-        include_once('viewAdmin/newsDeleteForm.php');
     }
-    public static function newsDeleteResult($id) {
-        $test = modelAdminNews::getNewsDelete($id);
-        include_once('viewAdmin/newsDeleteForm.php');
-    }*/
+    //-------delete
+    public static function paintingDeleteForm($id) {
+        $styles = modelAdminStyle::getStyleList();
+        $artists = modelAdminPaintings::getArtistList();
+        $detail = modelAdminPaintings::getPaintingDetail($id);
+        include_once('viewAdmin/paintingDeleteForm.php');
+    }
+    public static function paintingDeleteResult($id) {
+        $test = modelAdminPaintings::getPaintingDelete($id);
+        include_once('viewAdmin/paintingDeleteForm.php');
+    }
 }

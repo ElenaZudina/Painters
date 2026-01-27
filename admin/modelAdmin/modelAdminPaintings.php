@@ -83,12 +83,12 @@ class modelAdminPaintings {
                 }
             }
             return $test;
-        }/*
-        //----------------news delete
-        public static function getNewsDelete($id) {
+        }
+        //----------------painting delete
+        public static function getPaintingDelete($id) {
             $test=false;
             if(isset($_POST['save'])) {
-                $sql="DELETE FROM `news` WHERE `news`.`id` = ".$id;
+                $sql="DELETE FROM `paintings` WHERE `paintings`.`id` = ".$id;
                 $db = new Database();
                 $item = $db->executeRun($sql);
                 if($item==true) {
@@ -97,6 +97,6 @@ class modelAdminPaintings {
             }
             return $test;
         }
-*/
+
     
         }
