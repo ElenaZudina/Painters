@@ -19,7 +19,7 @@ ob_start();
             {
                 ?>
                 <div class="alert alert-warning">
-                    <strong>Error adding record! </strong><a href="paitingsAdmin">Go to painting list</a>
+                    <strong>Error adding record! </strong><a href="paintingsAdmin">Go to painting list</a>
                 </div>
                 <?php
             }
@@ -38,7 +38,7 @@ ob_start();
                     </tr>
                     <tr>
                         <td>Year</td>
-                        <td><textarea rows="5" name="year" class="form-control" required></textarea></td>
+                        <<td><input type="number" name="year" min="1901" max="2155" class="form-control" required></td>
                     </tr>
                     <tr>
                         <td>Style</td>

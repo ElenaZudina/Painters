@@ -23,7 +23,7 @@ class modelAdminPaintings {
             if(isset($_POST['title']) && isset($_POST['description']) && isset($_POST['year']) && isset($_POST['idArtist']) && isset($_POST['idStyle']) ) {
                 $title=$_POST['title'];
                 $description=$_POST['description'];
-                $year=$_POST['year'];
+                $year = intval(trim($_POST['year']));
                 $idArtist=$_POST['idArtist'];
                 $idStyle=$_POST['idStyle'];
                 //---------images type blob

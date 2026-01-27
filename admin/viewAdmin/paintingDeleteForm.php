@@ -38,7 +38,7 @@ ob_start();
                     </tr>
                      <tr>
                         <td>Year</td>
-                        <td><textarea rows="5" name="year" class="form-control" required></textarea></td>
+                        <td><input type="number" name="year" class="form-control" required value="<?php echo $detail['year_created']; ?>" min="1901" max="2155"> </td>
                     </tr>
                     <tr>
                         <td>Style</td>
