@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1>Koik paintings </h1>
+<h1>All paintings </h1>
 <br>
 
 <?php

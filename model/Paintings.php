@@ -21,11 +21,19 @@ class Paintings{
         return $arr;
     }
 
-    public static function getPaintingByID($id) {
+    /*public static function getPaintingByID($id) {
         $query = "SELECT * FROM paintings where id=".(string)$id;
         $db = new Database();
         $n = $db->getOne($query);
         return $n;
+    }*/
+
+     public static function getPaintingByID($id) {
+        $query = "SELECT paintings.*, styles.name AS style_name, artists.name as artist_name, users.username from paintings, styles, artists, users
+        WHERE paintings.style_id=styles.id AND paintings.artist_id=artists.id AND paintings.user_id=users.id and paintings.id=".$id;
+        $db = new Database();
+        $arr = $db->getOne($query);
+        return $arr;
     }
 }
 ?>
