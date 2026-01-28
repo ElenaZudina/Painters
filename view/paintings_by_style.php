@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1> Paintings (styles)</h1>
+<h1><?php echo t('paintings_by_style_title'); ?></h1>
 <br>
 
 <?php

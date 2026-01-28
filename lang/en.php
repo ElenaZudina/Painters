@@ -16,5 +16,6 @@ return [
     'comment_table_header' => 'Comment',
     'date_table_header' => 'Date',
     // ... all other English translations
+    'paintings_by_style_title' => 'Paintings (styles)',
 ];
 ?>

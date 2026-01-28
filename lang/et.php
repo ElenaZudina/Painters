@@ -17,5 +17,6 @@ return [
     'comment_table_header' => 'Kommentaar',
     'date_table_header' => 'Kuupäev',
     // ... Добавляйте сюда все остальные статические строки, которые нужно перевести
+    'paintings_by_style_title' => 'Maalid (stiilid)',
 ];
 ?>
