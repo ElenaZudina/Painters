@@ -1,18 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
 /* =============================================================================== */
 /* 1. Основа: Фон, палитра и главный шрифт */
 body {
   margin: 0;
-  font-family: 'Noto Serif', serif; /* Элегантный шрифт с засечками */
+  font-family: 'Montserrat', sans-serif; /* Авангардный шрифт */
   background-color: #f8f8f5; /* Теплый, почти белый фон (как холст) */
   color: #333; /* Мягкий темно-серый цвет для текста */
+  --accent-color-bright-teal: #00CED1; /* DarkTurquoise for freshness */
+  --accent-color-expressive-orange: #FFA500; /* Orange for energy */
 }
 
 h1, h2, h3 {
-  font-family: 'Noto Serif', serif;
+  font-family: 'Montserrat', sans-serif;
   color: #2c2c2c; /* Заголовки чуть темнее основного текста */
   letter-spacing: 0.5px; /* Немного пространства между буквами для изящества */
-  border-bottom: 1px solid #e0e0e0; /* Тонкая линия под заголовком */
+  border-bottom: 1px solid var(--accent-color-bright-teal); /* Тонкая линия под заголовком */
   padding-bottom: 10px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700; /* Extra bold */
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600; /* Semi bold */
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 600; /* Semi bold */
 }
 
 /* 2. Главный контейнер .divBox */
@@ -43,9 +62,9 @@ ul {
   padding: 0;
 }
 .one ul {
-  background: #ffffff; /* Возвращаем белый фон, чтобы меню не было прозрачным */
+  background: #2F4F4F; /* Графитовый/темно-серый фон для меню */
   text-align: center;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--accent-color-bright-teal); /* Нижняя граница из нового акцентного цвета */
   padding: 5px 0;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Добавляем легкую тень для отделения */
 }
@@ -59,7 +78,7 @@ ul {
   margin-right: 0;
 }
 .one ul a {
-  color: #555; /* Спокойный цвет ссылок */
+  color: white; /* Белый цвет для ссылок меню на темном фоне */
   font-weight: 400; /* Стандартная жирность */
   font-size: 1.1em;
   transition: color 0.3s ease; /* Плавный переход цвета */
@@ -69,7 +88,7 @@ ul {
   outline: none;
 }
 .one ul a:hover {
-  color: #a0522d; /* Приглушенный "художественный" цвет (сиена) при наведении */
+  color: var(--accent-color-expressive-orange); /* Приглушенный "художественный" цвет (сиена) при наведении */
   text-decoration: none; /* Убираем подчеркивание */
   background: none; /* Убираем любой фон при наведении */
 }
@@ -95,7 +114,7 @@ ul {
 /* 4. Типографика и ссылки */
 p {
   display: block; /* Исправляем display: flex на стандартный блочный */
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.7; /* Увеличиваем межстрочное расстояние для комфортного чтения */
   color: #444;
   word-wrap: break-word;
