@@ -46,7 +46,7 @@ ob_start();
                     </tr>
                     <tr>
                         <td>Year</td>
-                        <<td><input type="number" name="year" min="1901" max="2155" class="form-control" required></td>
+                        <td><input type="number" name="year" min="1901" max="2155" class="form-control" required></td>
                     </tr>
                     <tr>
                         <td>Style</td>
