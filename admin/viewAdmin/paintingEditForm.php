@@ -29,14 +29,21 @@ ob_start();
             <form method='POST' action="paintingEditResult?id=<?php echo $id; ?>" enctype="multipart/form-data">
                 <table class='table table-bordered'>
                     <tr>
-                        <td>Painting title</td>
-                        <td><input type='text' name='title' class='form-control' required value=<?php echo $detail['title']; ?>> </td>
+                        <td>Painting title (English)</td>
+                        <td><input type='text' name='title_en' class='form-control' required value="<?php echo $detail['title_en']; ?>"> </td>
                     </tr>
                     <tr>
-                        <td>Painting description</td>
-                        <td><textarea rows="5" name="description" class='form-control' required ><?php echo $detail['description']; ?></textarea></td>
+                        <td>Painting title (Estonian)</td>
+                        <td><input type='text' name='title_et' class='form-control' required value="<?php echo $detail['title_et']; ?>"> </td>
                     </tr>
                     <tr>
+                        <td>Painting description (English)</td>
+                        <td><textarea rows="5" name="description_en" class='form-control' required ><?php echo $detail['description_en']; ?></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Painting description (Estonian)</td>
+                        <td><textarea rows="5" name="description_et" class='form-control' required ><?php echo $detail['description_et']; ?></textarea></td>
+                    </tr>                    <tr>
                         <td>Year</td>
                         <td><input type="number" name="year" class="form-control" required value="<?php echo $detail['year_created']; ?>" min="1901" max="2155"> </td>
                     </tr>

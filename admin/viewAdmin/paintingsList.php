@@ -17,18 +17,28 @@ ob_start();
             </tr>
             <?php
             foreach($arr as $row) {
-                echo '<tr>';
-                echo '<td>'.$row['id'].'</td> ';
-                echo '<td><b>Title:</b> '.$row['title'].'<br>';
-                echo '<b>Стиль: </b><i>'.$row['style_name'].'</i>';
-                echo '<br><b>Художник: </b><i>'.$row['artist_name'].'</i>';
+                $currentLang = isset($_GET['lang']) ? $_GET['lang'] : 'en';
+                
+                $titleKey = 'title_' . $currentLang;
+                $displayTitle = isset($row[$titleKey]) ? $row[$titleKey] : (isset($row['title_en']) ? $row['title_en'] : 'No Title');
 
-                echo '</td>';
-                echo'<td>
-                <a href="paintingEdit?id='.$row['id'].'">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                <a href="paintingDel?id='.$row['id'].'">Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                </td>';
-                echo '</tr>';
+                $descriptionKey = 'description_' . $currentLang;
+                $displayDescription = isset($row[$descriptionKey]) ? $row[$descriptionKey] : (isset($row['description_en']) ? $row['description_en'] : 'No Description');
+                ?>
+                <tr>
+                    <td><?php echo $row['id']; ?></td>
+                    <td>
+                        <b>Title:</b> <?php echo $displayTitle; ?><br>
+                        <b>Description:</b> <?php echo $displayDescription; ?><br>
+                        <b>Стиль: </b><i><?php echo $row['style_name']; ?></i><br>
+                        <b>Художник: </b><i><?php echo $row['artist_name']; ?></i>
+                    </td>
+                    <td>
+                        <a href="paintingEdit?id=<?php echo $row['id']; ?>">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                        <a href="paintingDel?id=<?php echo $row['id']; ?>">Delete <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                    </td>
+                </tr>
+                <?php
             }
             ?>
         </table>

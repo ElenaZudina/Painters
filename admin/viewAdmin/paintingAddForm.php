@@ -29,12 +29,20 @@ ob_start();
             <form method='POST' action="paintingAddResult" enctype="multipart/form-data">
                 <table class='table table-bordered'>
                     <tr>
-                        <td>Paiting title</td>
-                        <td><input type='text' name='title' class='form-control' required></td>
+                        <td>Painting title (English)</td>
+                        <td><input type='text' name='title_en' class='form-control' required></td>
                     </tr>
                     <tr>
-                        <td>Description</td>
-                        <td><textarea rows="5" name="description" class="form-control" required></textarea></td>
+                        <td>Painting title (Estonian)</td>
+                        <td><input type='text' name='title_et' class='form-control' required></td>
+                    </tr>
+                    <tr>
+                        <td>Description (English)</td>
+                        <td><textarea rows="5" name="description_en" class="form-control" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>Description (Estonian)</td>
+                        <td><textarea rows="5" name="description_et" class="form-control" required></textarea></td>
                     </tr>
                     <tr>
                         <td>Year</td>
