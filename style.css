@@ -81,7 +81,7 @@ ul {
   color: white; /* Белый цвет для ссылок меню на темном фоне */
   font-weight: 400; /* Стандартная жирность */
   font-size: 1.1em;
-  transition: color 0.3s ease; /* Плавный переход цвета */
+  transition: all 0.3s ease; /* Плавный переход всех свойств */
   display: block;
   padding: 10px 15px;
   text-decoration: none;
@@ -91,6 +91,7 @@ ul {
   color: var(--accent-color-expressive-orange); /* Приглушенный "художественный" цвет (сиена) при наведении */
   text-decoration: none; /* Убираем подчеркивание */
   background: none; /* Убираем любой фон при наведении */
+  transform: translateY(-2px); /* Эффект легкого подъема при наведении */
 }
 .submenu {
   position: absolute;
@@ -158,10 +159,12 @@ th {
    border: none;
    color: white;
    font-weight: 400;
-   transition: background-color 0.3s ease;
+   transition: all 0.3s ease; /* Плавный переход всех свойств */
 }
 .btn:hover {
   background-color: #8B4513; /* Более темный оттенок сиены при наведении */
+  transform: translateY(-2px); /* Эффект легкого подъема */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Легкая тень для глубины */
 }
 
 /* Остальные стили */
@@ -228,11 +231,12 @@ section{
   border-radius: 5px;
   background-color: #ffffff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  transition: box-shadow 0.3s ease;
+  transition: all 0.3s ease; /* Плавный переход всех свойств */
 }
 
 .painting-card:hover {
   box-shadow: 0 5px 15px rgba(0,0,0,0.09); /* Эффект "приподнимания" при наведении */
+  transform: translateY(-5px); /* Более выраженный эффект подъема */
 }
 
 .painting-card h3 {
@@ -328,4 +332,22 @@ section{
     color: #a0522d;
     border-color: #a0522d;
     background-color: rgba(160, 82, 45, 0.1);
+}
+
+.comments-section {
+  background-color: rgba(0, 206, 209, 0.05); /* Very light teal background */
+  padding: 30px;
+  margin-top: 40px; /* Space from content above */
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* More pronounced shadow */
+}
+
+/* Specific styling for the comments table within the comments section */
+.comments-section #ctable th {
+    background-color: #f0f0f0; /* Light gray background for table headers */
+}
+
+.comments-section #ctable td,
+.comments-section #ctable th {
+    border-bottom: 1px solid var(--accent-color-bright-teal); /* Teal border for table rows */
 }

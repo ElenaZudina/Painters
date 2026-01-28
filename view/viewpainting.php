@@ -8,10 +8,12 @@ ob_start();
 ViewPaintings::ViewPainting($n);
 
 echo "<br>";
-Controller::Comments($_GET['id']);
 
+echo '<div class="comments-section">';
+Controller::Comments($_GET['id']);
 echo "<br>";
 ViewComments::CommentsForm();
+echo '</div>';
 
 $content = ob_get_clean();
 include_once 'view/layout.php';
