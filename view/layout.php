@@ -13,6 +13,10 @@
 
     </head>
     <body>
+        <div class="jumbotron text-center">
+            <h1>Painters Online</h1>
+            <p>Discover and share beautiful art.</p>
+        </div>
         <nav class="one">
             <ul class="topmenu">
                 <li><a href="#"><?php echo t('styles_menu'); ?><i class="fa fa-angle-down"></i></a>
