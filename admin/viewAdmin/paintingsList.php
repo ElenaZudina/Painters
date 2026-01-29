@@ -30,8 +30,8 @@ ob_start();
                     <td>
                         <b>Title:</b> <?php echo $displayTitle; ?><br>
                         <b>Description:</b> <?php echo $displayDescription; ?><br>
-                        <b>Стиль: </b><i><?php echo $row['style_name']; ?></i><br>
-                        <b>Художник: </b><i><?php echo $row['artist_name']; ?></i>
+                        <b>Style: </b><i><?php echo $row['style_name']; ?></i><br>
+                        <b>Artist: </b><i><?php echo $row['artist_name']; ?></i>
                     </td>
                     <td>
                         <a href="paintingEdit?id=<?php echo $row['id']; ?>">Edit <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
